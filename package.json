@@ -1,0 +1,112 @@
+{
+  "name": "@vited/theme-fluent",
+  "version": "0.1.0",
+  "description": "Fluent UI React theme for Vited documentation sites",
+  "keywords": [
+    "documentation",
+    "fluent",
+    "fluent-ui",
+    "react",
+    "theme",
+    "vite"
+  ],
+  "homepage": "https://github.com/vitedjs/theme-fluent#readme",
+  "bugs": {
+    "url": "https://github.com/vitedjs/theme-fluent/issues"
+  },
+  "license": "MPL-2.0",
+  "author": {
+    "name": "Guo Yunhe",
+    "email": "i@guoyunhe.me",
+    "url": "https://guoyunhe.me/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vitedjs/theme-fluent.git"
+  },
+  "funding": "https://ko-fi.com/guoyunhe",
+  "files": [
+    "dist",
+    "CHANGELOG.md",
+    "LICENSE",
+    "README.md"
+  ],
+  "type": "module",
+  "main": "./dist/index.mjs",
+  "types": "./dist/index.d.mts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.mts",
+      "import": "./dist/index.mjs"
+    }
+  },
+  "scripts": {
+    "build": "tsdown",
+    "docs:build": "vited build",
+    "docs:dev": "vited dev",
+    "format": "oxfmt --write .",
+    "format:check": "oxfmt --check .",
+    "lint": "oxlint && stylelint --allow-empty-input \"src/**/*.css\"",
+    "prepare": "husky",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "dependencies": {
+    "@fluentui/react-components": "^9.75.2",
+    "@fluentui/react-icons": "^2.0.347",
+    "fuse.js": "^7.5.0",
+    "html-react-parser": "^6.1.9",
+    "i18next": "^26.7.2",
+    "react-i18next": "^17.1.13",
+    "react-scroll-restore": "^0.2.0",
+    "shiki": "^4.6.0",
+    "wouter": "^3.13.0"
+  },
+  "devDependencies": {
+    "@guoyunhe/editorconfig": "^0.3.0",
+    "@guoyunhe/oxfmt-config": "^1.1.0",
+    "@tsdown/css": "^0.23.7",
+    "@types/node": "^22.20.5",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vited/cli": "link:../cli",
+    "@vited/core": "link:../core",
+    "husky": "^9.1.7",
+    "lint-staged": "^17.6.0",
+    "oxfmt": "^0.74.0",
+    "oxlint": "^1.92.0",
+    "oxlint-config-recommended": "^1.3.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "stylelint": "^17.16.0",
+    "stylelint-config-standard": "^40.0.0",
+    "tsdown": "^0.23.7",
+    "typescript": "^5.9.3",
+    "vitest": "^5.1.0"
+  },
+  "peerDependencies": {
+    "@vited/core": "^0.6.0",
+    "react": "^19.2.0"
+  },
+  "lint-staged": {
+    "*.{js,mjs,cjs,ts,mts,cts,jsx,tsx,vue}": [
+      "oxfmt --write",
+      "oxlint --fix"
+    ],
+    "*.css": [
+      "oxfmt --write",
+      "stylelint --fix"
+    ],
+    "*.{json,jsonc,scss,less,htm,html,md,mdx,yaml,yml}": "oxfmt --write"
+  },
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": ">=12.16.1",
+      "onFail": "error"
+    }
+  },
+  "engines": {
+    "node": "^22.0.0 || ^24.0.0 || ^26.0.0 || >=27.0.0"
+  }
+}
